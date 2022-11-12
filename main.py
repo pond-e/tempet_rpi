@@ -24,7 +24,7 @@ while(True):
         remember.main(res2)
     elif res2 == "power":
         remember.main(res2)
-    elif res2 == "stopbutton":
+    elif res2 == "stop_button":
         remember.main(res2)
     elif res2 == "stop":
         stop.main()
