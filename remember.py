@@ -15,10 +15,10 @@ def main(remember_button):
             result = subprocess.run(cmd, capture_output=True, shell=True, text=True)
             if(result != ''):
                 print("retry temperature " + str(i))
-                # TODO:Raspi_receive.phpに{"status": "retry"}をPOSTで送る
+                res = requests.post("https://tempet.sakura.tv/tempet/Raspi_receive.php", data={"status": "retry"})# TODO:Raspi_receive.phpに{"status": "retry"}をPOSTで送る
             else:
                 print("success temperature " + str(i))
-                # TODO:Raspi_receive.phpに{"status": "success"}をPOSTで送る
+                res = requests.post("https://tempet.sakura.tv/tempet/Raspi_receive.php", data={"status": "success"})# TODO:Raspi_receive.phpに{"status": "success"}をPOSTで送る
                 if(i == temperature_top):
                     server_finish_wait()
     else:
@@ -26,10 +26,10 @@ def main(remember_button):
         result = subprocess.run(cmd, capture_output=True, shell=True, text=True)
         if(result != ''):
             print("retry " + remember_button)
-            # TODO:Raspi_receive.phpに{"status": "retry"}をPOSTで送る
+            res = requests.post("https://tempet.sakura.tv/tempet/Raspi_receive.php", data={"status": "retry"})# TODO:Raspi_receive.phpに{"status": "retry"}をPOSTで送る
         else:
             print("success " + remember_button)
-            # TODO:Raspi_receive.phpに{"status": "success"}をPOSTで送る
+            res = requests.post("https://tempet.sakura.tv/tempet/Raspi_receive.php", data={"status": "success"})# TODO:Raspi_receive.phpに{"status": "success"}をPOSTで送る
             server_finish_wait()
     
 
@@ -43,10 +43,10 @@ def test(remember_button):
             result = subprocess.run(cmd, capture_output=True, shell=True, text=True)
             if(result != ''):
                 print("retry temperature " + str(i))
-                # TODO:Raspi_receive.phpに{"status": "retry"}をPOSTで送る
+                res = requests.post("https://tempet.sakura.tv/tempet/Raspi_receive.php", data={"status": "retry"})# TODO:Raspi_receive.phpに{"status": "retry"}をPOSTで送る
             else:
                 print("success temperature " + str(i))
-                # TODO:Raspi_receive.phpに{"status": "success"}をPOSTで送る
+                res = requests.post("https://tempet.sakura.tv/tempet/Raspi_receive.php", data={"status": "success"})# TODO:Raspi_receive.phpに{"status": "success"}をPOSTで送る
                 if(i == temperature_top):
                     server_finish_wait()
     else:
@@ -54,10 +54,10 @@ def test(remember_button):
         result = subprocess.run(cmd, capture_output=True, shell=True, text=True)
         if(result != ''):
             print("retry " + remember_button)
-            # TODO:Raspi_receive.phpに{"status": "retry"}をPOSTで送る
+            res = requests.post("https://tempet.sakura.tv/tempet/Raspi_receive.php", data={"status": "retry"})# TODO:Raspi_receive.phpに{"status": "retry"}をPOSTで送る
         else:
             print("success " + remember_button)
-            # TODO:Raspi_receive.phpに{"status": "success"}をPOSTで送る
+            res = requests.post("https://tempet.sakura.tv/tempet/Raspi_receive.php", data={"status": "success"})# TODO:Raspi_receive.phpに{"status": "success"}をPOSTで送る
             server_finish_wait()
 
 if __name__ == "__main__":
