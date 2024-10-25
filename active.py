@@ -1,12 +1,12 @@
 import subprocess
 import requests
-import wpi3_bme280
+import bme280
 
 def main():
     print("active function")
     
-    wpi3_bme280.readData()
-    temp = wpi3_bme280.temp
+    bme280.readData()
+    temp = bme280.temperature
     
     r = requests.post("https://tempet.sakura.tv/tempet/Raspi_bme.php", data={'data': temp})
     
